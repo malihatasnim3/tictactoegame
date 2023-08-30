@@ -9,11 +9,10 @@ void display(char board[3][3]) {
 		cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
 }
 
-void insertInput(char i, char board[3][3], void display(char board[3][3])) {
-	int position;
+void insertInput(int p, char i, char board[3][3], void display(char board[3][3])) {
 	cout << "Choose a position from 1-9: " << endl;
-	cin >> position;
-	switch (position) {
+	cin >> p;
+	switch (p) {
 	case 1 : board[0][0] = i ;
 		display(board);
 		break;
@@ -47,20 +46,53 @@ void insertInput(char i, char board[3][3], void display(char board[3][3])) {
 	}
 }
 
+
 int main() {
 	char board[3][3] = { {' ',' ', ' '}, {' ', ' ', ' '} , {' ', ' ', ' '} };
-	char input;
+	char input1, input2;
+	int position1 = 0, position2 = 0;
 	display(board);
+	//PLAYER 1
 	cout << "Player 1: Enter input: " << endl;
-	cin >> input;
+	cin >> input1;
 	while (true) {
-		if (input == 'x' || input == 'X' || input == 'o' || input == 'O') {
-			insertInput(input, board, display);
+		if (input1 == 'x' || input1 == 'o') {
+			insertInput(position1, input1, board, display);
+			break;
 		}
 		else {
 			cout << "Please enter a valid input: " << endl;
-			cin >> input;
+			cin >> input1;
 		}
 	}
+
+
+	//PLAYER 2
+	cout << "Player 2: Enter input: " << endl;
+	cin >> input2;
+	while (true) {
+		if (input1 == input2) {
+			cout << "Please enter a valid input: " << endl; \
+				cin >> input2;
+		}
+		else {
+			if (input2 == 'x' || input2 == 'o') {
+				if (position1 != position2) {
+					insertInput(position2, input2, board, display);
+				}
+				else {
+					cout << "Please enter a valid position: " << endl;
+					cin >> position2;
+				}
+			}
+			else {
+				cout << "Please enter a valid input: " << endl;
+				cin >> input2 ;
+			}
+	
+
+		}
+	}
+
 
 }
