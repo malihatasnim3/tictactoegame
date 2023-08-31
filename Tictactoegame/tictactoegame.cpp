@@ -10,7 +10,7 @@ void display(char board[3][3]) {
 		cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
 }
 
-void insertInput(int p, char i, char board[3][3], void display(char board[3][3])) {
+void insertPosition(int p, char i, char board[3][3], void display(char board[3][3])) {
 
 	 do{
 		 cout << "Choose a position from 1-9: " << endl;
