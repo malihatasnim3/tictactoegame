@@ -4,7 +4,7 @@ using namespace std;
 
 char board[3][3] = { {' ',' ', ' '}, {' ', ' ', ' '} , {' ', ' ', ' '} };
 int position = 0;
-char playerTurn = ' ';
+char playerTurn = 'X';
 bool gameOver = false;
 
 void display() {
@@ -75,8 +75,6 @@ void insertPosition(void (display)()) {
 }
 
 void currentPlayer() {
-	cout << "Enter your input (X/O): " << endl;
-	cin >> playerTurn;
 	if (playerTurn == 'X') {
 			cout << "Player [X] turn : ";
 	}
@@ -97,55 +95,4 @@ int main() {
 	
 
 }
-	//PLAYER 1
-	//cout << "Player 1: Enter input: " << endl;
-	//cin >> input;
-	//while (true) {
-	//	if (input == 'x' || input == 'o') {
-	//		insertPosition(position1, input, board, display);
-	//		break;
-	//	}
-	//	else {
-	//		cout << "Please enter a valid input: " << endl;
-	//		cin >> input;
-	//	}
-	//}
-
-
-	////PLAYER 2
-	//cout << "Player 2: Enter input: " << endl;
-	//cin >> input;
-
-	//char player2Input;
-	//if (input == 'x') {
-	//	player2Input = 'o';
-	//}
-	//else {
-	//	player2Input = 'x';
-	//}
-	//cout << "Player 2: Enter input (" << player2Input << "): " << endl;
-	//cin >> input;
-	//insertPosition(position2, player2Input, board, display);
-
-	/*while (!input) {
-		if (true){
-			insertPosition(position2, input, board, display);
-			break;
-		}
-		else {
-			cout << "Please enter a valid input: " << endl;
-			cin >> input;
-		}
-	}*/
-		/*}
-		else {
-			if (input1 == 'x' || input1 == 'o') {
-				insertPosition(position2, input2, board, display, validatePosition);
-				break;
-			}
-			else {
-				cout << "Please enter a valid input: " << endl;
-				cin >> input1;
-			}
-			
-		}*/
+	
