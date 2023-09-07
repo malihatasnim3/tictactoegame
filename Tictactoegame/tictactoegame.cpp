@@ -2,16 +2,28 @@
 using namespace std;
 
 char board[3][3] = { {' ',' ', ' '}, {' ', ' ', ' '} , {' ', ' ', ' '} };
-int position = 0;
+string position = "0";
 char playerTurn = 'X';
 bool draw = false;
 
 void display() {
+	cout << "Positions on the board are as follows: " << endl;
+	cout << "                                " << endl;
+
+	cout << "  1  |  2  |  3  " << endl;
+	cout << "-----|-----|-----" << endl;
+	cout << "  4  |  5  |  6  " << endl;
+	cout << "-----|-----|-----" << endl;
+	cout << "  7  |  8  |  9  " << endl;
+	cout << "                 " << endl;
+	cout << "                 " << endl;
+
 		for (int i = 0; i < 2; i++) {
-			cout << " " << board[i][0] << " | " << board[i][1] << " | " << board[i][2] << endl;
-			cout << "-----------" << endl;
+			cout << "   " << board[i][0] << " |  " << board[i][1] << "  |  " << board[i][2] << endl;
+			cout << "-----------------" << endl;
 		}
-		cout << " " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
+		cout << "   " << board[2][0] << " |  " << board[2][1] << "  |   " << board[2][2] << endl;
+		cout << "                               " << endl;
 }
 
 void insertPosition(void (display)()) {
@@ -19,58 +31,58 @@ void insertPosition(void (display)()) {
 	 do{
 		 cout << "Choose a position from 1-9: " << endl;
 		 cin >> position;
-		 {
-			if (position == 1 && board[0][0] != 'X' && board[0][0] != 'O') {
-				board[0][0] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 2 && board[0][1] != 'X' && board[0][1] != 'O') {
-				board[0][1] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 3 && board[0][2] != 'X' && board[0][2] != 'O') {
-				board[0][2] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-;
-			}
-			else if (position == 4 && board[1][0] != 'X' && board[1][0] != 'O') {
-				board[1][0] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 5 && board[1][1] != 'X' && board[1][1] != 'O') {
-				board[1][1] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 6 && board[1][2] != 'X' && board[1][2] != 'O') {
-				board[1][2] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 7 && board[2][0] != 'X' && board[2][0] != 'O') {
-				board[2][0] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 8 && board[2][1] != 'X' && board[2][1] != 'O') {
-				board[2][1] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else if (position == 9 && board[2][2] != 'X' && board[2][2] != 'O') {
-				board[2][2] = playerTurn;
-				playerTurn = (playerTurn == 'X') ? 'O' : 'X';
-				break;
-			}
-			else {
-				cout << "Invalid input." << endl;
-			}
-		}
-	 } while (!(position != 0 && position <= 9));
+			 {
+				 if (position == "1" && board[0][0] != 'X' && board[0][0] != 'O') {
+					 board[0][0] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "2" && board[0][1] != 'X' && board[0][1] != 'O') {
+					 board[0][1] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "3" && board[0][2] != 'X' && board[0][2] != 'O') {
+					 board[0][2] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+					 ;
+				 }
+				 else if (position == "4" && board[1][0] != 'X' && board[1][0] != 'O') {
+					 board[1][0] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "5" && board[1][1] != 'X' && board[1][1] != 'O') {
+					 board[1][1] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "6" && board[1][2] != 'X' && board[1][2] != 'O') {
+					 board[1][2] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "7" && board[2][0] != 'X' && board[2][0] != 'O') {
+					 board[2][0] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "8" && board[2][1] != 'X' && board[2][1] != 'O') {
+					 board[2][1] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else if (position == "9" && board[2][2] != 'X' && board[2][2] != 'O') {
+					 board[2][2] = playerTurn;
+					 playerTurn = (playerTurn == 'X') ? 'O' : 'X';
+					 break;
+				 }
+				 else {
+					 cout << "Invalid input." << endl;
+				 }
+			 }
+	 } while (!(position != "0" && position <= "9"));
 }
 
 void currentPlayer() {
