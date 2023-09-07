@@ -104,6 +104,8 @@ bool gameWinner() {
 			}
 		}
 	}
+	draw = true;
+	return false;
 }
 
 
@@ -115,14 +117,14 @@ int main() {
 		insertPosition(display);
 	} while (gameWinner());
 	display();
-	if (draw = false && playerTurn == 'O') {
+	if (draw == false && playerTurn == 'O') {
 		cout << "Congratulations! Player with [X] has won the game!" << endl;
 	}
-	else if (draw = false && playerTurn == 'X') {
+	else if (draw == false && playerTurn == 'X') {
 		cout << "Congratulations! Player with [O] has won the game!" << endl;
 	}
-	else if (draw = true){
-		cout << "Match Draw" << endl;
+	else if(draw == true){
+		cout << "Match Draw." << endl;
 	}
 	system("pause");
 	return 0;
