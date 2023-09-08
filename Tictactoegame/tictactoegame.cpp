@@ -22,7 +22,7 @@ void display() {
 			cout << "   " << board[i][0] << " |  " << board[i][1] << "  |  " << board[i][2] << endl;
 			cout << "-----------------" << endl;
 		}
-		cout << "   " << board[2][0] << " |  " << board[2][1] << "  |   " << board[2][2] << endl;
+		cout << "   " << board[2][0] << " |  " << board[2][1] << "  |  " << board[2][2] << endl;
 		cout << "                               " << endl;
 }
 
